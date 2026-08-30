@@ -4,7 +4,7 @@ import readline from "readline";
 console.log("Connecting directly to Socket.io backend...");
 
 // Bypasses local DNS resolution glitches by forcing standard polling-first handshakes
-const socket = io("http://127.0.0.1:5000", {
+const socket = io("https://chat-server-d0e8.onrender.com", {
   transports: ["polling", "websocket"],
   forceNew: true,
   autoConnect: true
