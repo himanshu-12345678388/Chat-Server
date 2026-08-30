@@ -19,11 +19,11 @@ let username = "";
 let room = "";
 
 socket.on("connect_error", (err) => {
-  console.error("\n❌ Handshake failed:", err.message);
+  console.error("\n Handshake failed:", err.message);
 });
 
 socket.on("connect", () => {
-  console.log("\n✅ Successfully connected to chat server!");
+  console.log("\n Successfully connected to chat server!");
   initSession();
 });
 
