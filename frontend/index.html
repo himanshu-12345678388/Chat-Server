@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3f5f1" />
+    <title>Gather | Chat</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Gather home">
+          <span class="brand-mark" aria-hidden="true">g</span>
+          <span>gather<span class="brand-period">.</span></span>
+        </a>
+        <div class="topbar-note">A little room to talk</div>
+        <label class="identity-field">
+          <span class="identity-dot" aria-hidden="true">Y</span>
+          <input id="name-input" aria-label="Your display name" maxlength="24" value="You" />
+        </label>
+      </header>
+
+      <main class="chat-shell">
+        <aside class="room-rail" aria-label="Chat room">
+          <div class="rail-heading">YOUR SPACE</div>
+          <div class="room-current">
+            <span class="room-hash">#</span>
+            <input id="room-input" aria-label="Room name" maxlength="32" value="general" />
+            <button id="join-button" class="join-button" type="button" title="Join room" aria-label="Join room">↵</button>
+          </div>
+          <p class="room-hint">Choose a room and say hello.</p>
+          <div class="rail-bottom">
+            <span class="online-dot" aria-hidden="true"></span>
+            <span id="connection-label">Connecting</span>
+          </div>
+        </aside>
+
+        <section class="conversation" aria-label="Conversation">
+          <div class="conversation-header">
+            <div>
+              <div class="eyebrow">ROOM</div>
+              <h1><span class="heading-hash">#</span><span id="room-title">general</span></h1>
+            </div>
+            <div class="people-count"><span class="people-icon" aria-hidden="true">••</span> Live chat</div>
+          </div>
+
+          <div id="message-list" class="message-list" role="log" aria-live="polite" aria-relevant="additions text">
+            <div class="welcome-note">
+              <span class="welcome-spark" aria-hidden="true">✳</span>
+              <div class="welcome-title">Welcome to the room</div>
+              <p>Messages here are shared with everyone who joins.</p>
+            </div>
+          </div>
+
+          <form id="message-form" class="composer">
+            <label class="sr-only" for="message-input">Write a message</label>
+            <input id="message-input" type="text" maxlength="1000" placeholder="Write a message..." autocomplete="off" />
+            <button class="send-button" type="submit" aria-label="Send message" title="Send message">
+              <span aria-hidden="true">↑</span>
+            </button>
+          </form>
+          <div id="notice" class="notice" role="status"></div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
